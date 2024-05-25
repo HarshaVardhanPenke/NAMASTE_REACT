@@ -45,10 +45,11 @@ if(onlineStatus==false) return (<div><h1>You are offline! check your internet co
 
 const {LoggedUser,setUserName}=useContext(UserContext);
 
-    return  ListOfrestaurant===undefined ? <Shimmer />:
+    return  ListOfrestaurant.length===0 ? <Shimmer />:
     (
          <div className="body">
-            <div className="filter flex pl-5">
+            
+            <div className="filter flex justify-center m-4">
               <div >
                <input type="text" data-testid="searchInput" testivalue={searchText} className="border border-solid border-black" onChange={(e)=>{
                   setSearchText(e.target.value);
@@ -80,7 +81,8 @@ const {LoggedUser,setUserName}=useContext(UserContext);
             <input className="border border-black" value={LoggedUser} onChange={(e)=>setUserName(e.target.value)} ></input>
        </div>
             </div>
-        <div className="flex flex-wrap gap-12 justify-evenly mt-4"> 
+      
+        <div className="flex flex-wrap gap-12 justify-evenly mt-12"> 
                 {
                  filteredRestaurants.map((restaurant)=>(
                     <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}>

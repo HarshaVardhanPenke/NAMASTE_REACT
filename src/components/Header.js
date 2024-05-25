@@ -15,7 +15,7 @@ const Header=() =>{
     const cartItems=useSelector((store)=> store.cart.items);
 
    return(
-    <div className="flex justify-between shadow-lg bg-purple-100" >
+    <div className="flex justify-between shadow-lg  text-white bg-gradient-to-r from-gray-700 via-gray-900 to-black" >
        <div className="logo-container">
           <img className="w-28" src={LOGO_url}></img>
        </div>
@@ -35,8 +35,8 @@ const Header=() =>{
                <Link to="/grocery">Grocery</Link>
                </li>
              <li className="px-4 font-bold text-xl">
-               <Link to="/cart"><i class="fa-regular fa-cart-shopping">-({cartItems.length})</i> </Link>
-               </li>
+               <Link to="/cart"><i class="fa-solid fa-cart-shopping">-({cartItems.length})</i></Link>
+               </li> 
             { console.log(cartItems)}
             <button className="Login "onClick={()=>
             {
