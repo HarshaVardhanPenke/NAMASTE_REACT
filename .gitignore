@@ -1,0 +1,6 @@
+/node_modules
+/dist
+/pacakge-lock.json
+/coverage
+/.parcel-cache
+
