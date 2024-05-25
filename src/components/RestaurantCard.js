@@ -9,16 +9,16 @@ const RestaurantCard = (props) => {
   return (
     <div
       data-testid="resCard"
-      className="p-4 rounded-xl w-[280px] transform transition-transform duration-300 hover:scale-110 hover:shadow-lg"
+      className="p-4 rounded-xl w-[250px] scale-110 transition-all duration-300 hover:scale-100"
     >
       <img
-        className="rounded-md h-[150px] w-[250px]"
+        className="rounded-lg h-44 w-full "
         alt="reslogo"
         src={CDN_url + cloudinaryImageId}
       ></img>
       <h3 className="font-bold py-4 text-lg">{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating}</h4>
+      <h4>⭐{avgRating}</h4>
       <h4>{costForTwo}</h4>
       <h4>{sla?.slaString}</h4>
     </div>

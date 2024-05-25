@@ -35,7 +35,7 @@ const Header=() =>{
                <Link to="/grocery">Grocery</Link>
                </li>
              <li className="px-4 font-bold text-xl">
-               <Link to="/cart">Cart -({cartItems.length})</Link>
+               <Link to="/cart"><i class="fa-regular fa-cart-shopping">-({cartItems.length})</i> </Link>
                </li>
             { console.log(cartItems)}
             <button className="Login "onClick={()=>
