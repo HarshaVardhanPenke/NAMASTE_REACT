@@ -27,14 +27,14 @@ console.log("body rendered",ListOfrestaurant);
     FetchData()
  },[]);
 const FetchData= async()=>{
-   const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.7219213&lng=83.2974204&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+   const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
    const json=await data.json();
-   console.log(json);
+   // console.log(json);
    SetListOfrestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.
       infoWithStyle?.restaurants
       );
 
-      console.log("data is"+json.data.cards[4].card.card.gridElements.
+      console.log("data is",json.data.cards[4].card.card.gridElements.
          infoWithStyle.restaurants);
    SetFilteredRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.
          infoWithStyle?.restaurants)
@@ -53,6 +53,8 @@ const {LoggedUser,setUserName}=useContext(UserContext);
               <div >
                <input type="text" data-testid="searchInput" testivalue={searchText} className="border border-solid border-black" onChange={(e)=>{
                   setSearchText(e.target.value);
+                  
+                  SetFilteredRestaurants(FilteredRestaurants);
                }}></input>
                <button className="m-4 py-1  bg-green-200 px-4 rounded-md" onClick={()=>{
                   console.log(searchText)
@@ -73,9 +75,8 @@ const {LoggedUser,setUserName}=useContext(UserContext);
            
           );
          SetFilteredRestaurants(FilteredList);
-         
+         console.log("clicked" , FilteredList)
         }
-        
             }>Top Rated Restaurants</button>
            <label>UserName : </label>
             <input className="border border-black" value={LoggedUser} onChange={(e)=>setUserName(e.target.value)} ></input>
