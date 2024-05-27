@@ -16,11 +16,14 @@ const RestaurantCard = (props) => {
         alt="reslogo"
         src={CDN_url + cloudinaryImageId}
       ></img>
-      <h3 className="font-bold py-4 text-lg">{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
+      <h3 className="font-bold text-lg">{name}</h3>
+      <div className="flex justify-between font-semibold">
       <h4>⭐{avgRating}</h4>
+      <h4>•{sla?.slaString}</h4>
+      </div>
+      <h4>{cuisines.join(", ")}</h4>
+     
       <h4>{costForTwo}</h4>
-      <h4>{sla?.slaString}</h4>
     </div>
   );
 };

@@ -53,7 +53,9 @@ const {LoggedUser,setUserName}=useContext(UserContext);
               <div >
                <input type="text" data-testid="searchInput" testivalue={searchText} className="border border-solid border-black" onChange={(e)=>{
                   setSearchText(e.target.value);
-                  
+                  const FilteredRestaurants=ListOfrestaurant.filter((res)=>
+                     res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                  )
                   SetFilteredRestaurants(FilteredRestaurants);
                }}></input>
                <button className="m-4 py-1  bg-green-200 px-4 rounded-md" onClick={()=>{

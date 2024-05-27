@@ -32,8 +32,8 @@ const categories=resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.ca
                <RestaurantCategory
                key={category?.card?.card?.title}
                data={category?.card?.card}
-               showItems={index === showIndex ? true : false}
-               setShowIndex={() => setShowIndex(index)}
+               showItems={index === showIndex}
+               setShowIndex={() => setShowIndex(index===showIndex ? null :index)}
              />
             ))}
            
